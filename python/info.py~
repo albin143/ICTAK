@@ -1,0 +1,9 @@
+a=raw_input("enter the name")
+print(a)
+b=input("enter the age")
+print(b)
+c=input("mark")
+print(c)
+
+
+
