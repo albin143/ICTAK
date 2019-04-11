@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body><h1>welcome to<%=title%></h1>
-    <li>
-    <%=list%>
-    </li>
+    <ul>
+    <%for(var i=0;i<list.length;i++){%>
+    <li><%=list[i]%></i>
+    <%}%>
+    </ul>
 </body>
 </html>
