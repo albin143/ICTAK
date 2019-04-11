@@ -21,7 +21,7 @@ hndle.post('/getdata',(req,res)=>{
     console.log(mobile)
 });
 hndle.get('/',(req,res)=>{
-    res.render("index");
+    res.render("index",{name:'tom'});
 });
 hndle.get('/about',(req,res)=>{
     res.render("about")
@@ -32,4 +32,14 @@ hndle.get('/Contact',(req,res)=>{
 hndle.get('/gallery',(req,res)=>{
     res.render("gallery")
 })
-hndle.listen(3000);
+
+hndle.listen(3700,()=>{
+    console.log("web running ")
+   
+});
+hndle.post('/login',(re,res)=>{
+    var user=req.body.username;
+    var pass=req.password;
+    console.log(user)
+    console.log(pass)
+})
