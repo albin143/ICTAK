@@ -1,5 +1,7 @@
 const express=require('express');
 const adminroutes=express.Router();
+const bookdata=require('../model/bookdata')
+
 function router(nav){
 
     adminroutes.route('/')
@@ -12,7 +14,14 @@ function router(nav){
     });
 adminroutes.route('/add')
 .get((req,res)=>{
-    res.send("നോക്കീ ഇരൂന്നോ....");
+    var item={
+        title:req.param('title'),
+        author:req.param('author'),
+        genre:req.param('genre')
+    }
+    var book=new bookdata(item);
+    book.save();
+    res.redirect('/books');
 });
     return adminroutes;
     
