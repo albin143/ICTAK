@@ -3,15 +3,16 @@ const chalk=require('chalk');
 const authorRouter=express.Router();
 
 var app= express();//object creation
-const nav=[{link:'/books',title:'books'},{link:'/authors',title:'authors'}];
+const nav=[{link:'/books',title:'books'},{link:'/authors',title:'authors'},{link:'/addbook',title:'add book'}];
 const booksRouter=require('./src/routes/bookroutes')(nav);
-
+const adminrouter=require('./src/routes/adminroutes')(nav);
 
 
 app.use(express.static('./public'));
 app.use(express.urlencoded());
 app.use('/books',booksRouter);
 app.use('/authors',authorRouter);
+app.use('/addbook',adminrouter);
 
 app.set('views','./src/views');
 app.set('view engine','ejs');
